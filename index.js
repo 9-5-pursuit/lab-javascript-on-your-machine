@@ -4,7 +4,37 @@
  * Depending on the operation, either add up all of the numbers or subtract all of the numbers, from left to right.
  * @returns {number} The result of either adding all numbers or subtracting all numbers, depending on the arguments added to the command line.
  */
-function calculator() {}
+function calculator() {
+    if (process.argv.length < 3) {
+        return "No operation provided..."
+    }
+
+     if (process.argv.length < 4) {
+        return "No numbers provided..."
+    }
+
+    if (process.argv[2] !== "plus" && process.argv[2] !== "minus") {
+        return `Invalid operation: ${process.argv[2]}`;
+    }
+
+   if (process.argv[2] === "plus") {
+    let totalSum = 0;
+    
+    for (let i = 3; i < process.argv.length; i++) {
+        totalSum += Number(process.argv[i])
+    }
+
+    return totalSum
+   } else {
+    let subNum = process.argv[3]
+
+    for (let i = 4; i < process.argv.length; i++) {
+        subNum -= Number(process.argv[i])
+    }
+
+    return subNum
+   }
+}
 
 // Don't change anything below this line.
 module.exports = calculator;
