@@ -27,7 +27,7 @@ if(operation === 'minus'){
     num = Number(process.argv[3]);
     for(let i = 4; i < process.argv.length; i++){
         num -= Number(process.argv[i]);
-    }
+    }   
 }
 return num;
 }
