@@ -4,20 +4,39 @@
  * Depending on the operation, either add up all of the numbers or subtract all of the numbers, from left to right.
  * @returns {number} The result of either adding all numbers or subtracting all numbers, depending on the arguments added to the command line.
  */
-function calculator(toDo, numbers) {
-    let nums = numbers;
-    let total;
-    if(toDo === "undefined")
+function calculator() {
+    let nums = Number(process.argv[3]);
+    let toDo = process.argv[2];
+    let total = 0;
+    
+    if(!toDo)
     {
         return "No operation provided...";
     }
-    else if(toDo === "plus")
+    if(!nums)
     {
-        for(let i = 0; i < nums.length; i++)
+        return "No numbers provided...";
+    }
+    if(toDo === "plus")
+    {
+        for(let i = 3; i < process.argv.length; i++)
         {  
-            total += nums[i];
+            total += Number(process.argv[i]);
         }
         return total;
+    }
+    else if(toDo === "minus")
+    {
+        total = Number(nums);
+        for(let i = 4; i < process.argv.length; i++)
+        {  
+            total -= Number(process.argv[i]);
+        }
+        return total;
+    }
+    else
+    {
+        return "Invalid operation: modulo";
     }
 }
 
