@@ -113,7 +113,7 @@ function calculator() {
 
 ```
 
-* In this example, the function is called with the command line arguments "node", "calculator.js", "plus", "3", "4", "5". The first argument is the name of the script, the second argument is the operation ("plus"), and the remaining arguments are the numbers to be used in the calculation. The function will return the result 12, which is the sum of 3, 4, and 5.
+* In this example, the function is called with the command line arguments "node", "index.js", "plus", "3", "4", "5". The first argument is the name of the script, the second argument is the operation ("plus"), and the remaining arguments are the numbers to be used in the calculation. The function will return the result 12, which is the sum of 3, 4, and 5.
 
 
 
