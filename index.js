@@ -13,7 +13,7 @@ function calculator() {
     if (process.argv.length <= 3) {
         result = 'No numbers provided...';
     }
-    if (process.argv[2] !== 'plus' && process.argv[2] !== 'minus') {
+    if (process.argv[2] !== 'plus' && process.argv[2] !== 'minus' && process.argv[2] !== undefined) {
         result = `Invalid operation: ${process.argv[2]}`
     } 
     if (process.argv[2] === "minus") {
