@@ -5,32 +5,44 @@
  * @returns {number} The result of either adding all numbers or subtracting all numbers, depending on the arguments added to the command line.
  */
 function calculator() {
-    let sum = 0
-    if(process.argv.length < 3){
+
+    if (process.argv.length < 3){
         return "No operation provided...";
     }
-    if(process.argv.length < 4){
+    if (process.argv.length < 4){
         return "No numbers provided..."
     }
-    if(process.argv[2] === "plus"){
-    for(let i = 3; i < process.argv.length; i++){
-        sum += Number(process.argv[i]);
-           
-
-            }
-        return sum
-     } if(process.argv[2] === "minus"){
-    for(let i =3; i < process.argv.length; i--){
-        sum -= Number(process.argv[i]);
+    if (process.argv[2] !=="plus" || process.argv[2] !== "minus"){
+        
+        let operator = process.argv[2]
+        return `Invalid operation: ${operator}`
     }
-    return sum
+    if (process.argv[2] === "plus"){
+        
+        let sum = 0;
+        
+     for(let i = 2; i < process.argv.length; i++){
+    
+         sum += Number(process.argv[i]);
+    }  
+
+
+         } if (process.argv[2] === "minus"){
+        
+        let sum = process.argv[3]
+     for(let i = 2; i < process.argv.length; i--){
+        sum -= Number(process.argv[i]);
+        return sum
+   
+    }
 }
-else if(process.argv[2] !== "plus" || process.argv[2] !== "minus"){
-    let operator = process.argv[2]
-    return `Invalid operation:${operator}`;
 
 }
-return sum
+
+    
+
+     
+
 }  
 
 
