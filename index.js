@@ -25,9 +25,8 @@ function calculator() {
     : (numbers.length === 0) ? "No numbers provided..."
     : (operation === "plus") ? loopAccumulator("+", numbers)
     : (operation === "minus") ? loopAccumulator("-", numbers)
-    : ("plus" != operation || "minus" != operation) ? "Invalid operation: modulo"
+    : ("plus" !== operation || "minus" !== operation) ? "Invalid operation: modulo"
     : null;
-
 };
 
 console.log(calculator());
