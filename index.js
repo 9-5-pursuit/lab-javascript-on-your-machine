@@ -6,12 +6,11 @@
  */
 function calculator() {
 
-    var commands = ['plus','minus']
     if (process.argv.length<3) {
         return "No operation provided..."
     } else if (process.argv.length<4) {
         return "No numbers provided..."
-    } else if (!commands.includes(process.argv[2])){
+    } else if (!['plus','minus'].includes(process.argv[2])){
         return `Invalid operation: ${process.argv[2]}`
     }
 
