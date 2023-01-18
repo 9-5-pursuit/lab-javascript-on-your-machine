@@ -5,36 +5,43 @@
  * @returns {number} The result of either adding all numbers or subtracting all numbers, depending on the arguments added to the command line.
  */
 function calculator() {
+   console.log(process.argv)
    
-   if(process.argv !== 'plus' && process.argv !== 'minus'){ // Check out if there is an operation 
+   // Check out if there is an operation 
+//    if(process.argv !== 'plus' && process.argv !== 'minus'){ 
+//     return "No operation provided..."
+//    }
+let argumentLength = process.argv.length
+   if(process.argv.length < 3){ 
     return "No operation provided..."
    }
+
    // Check out if there is an numbers
-    
-   if(process.argv[1] !== 'plus'){ 
+   if(process.argv.length === 3){ 
     return "No numbers provided..."
    }
+
    // Check out if the operation uses plus or minus
-   if(process.argv !== 'plus' || process.argv !== 'minus'){
+   if(process.argv[2] !== 'plus' && process.argv[2] !== 'minus'){
     return `Invalid operation: modulo`
    }
 
-   for(let i = 2; i < process.argv.length; i++){
-    let sum = 0
-    if(process.argv.command === "plus"){
-        numbers += process.argv.length
-    }
-    return sum
-   }
 
-   for(let i = 2; i < process.argv.length; i--){
-    let subtract = 0
-    if (process.argv === "minus"){
-        numbers -= process.argv.length
-    }
-    return subtract
-   }
+// Checking using the plus
+let total = 0
+if(process.argv[2] === "plus"){
+    for(let i = 3; i < process.argv.length; i++)
+    total += Number(process.argv[i])
+}
 
+
+// Checking using the minus
+if(process.argv[2] === "minus"){
+    total = process.argv[3]
+    for(let i = 4; i < process.argv.length; i++)
+    total -= Number(process.argv[i])
+}
+ return total
 }
 
 // Don't change anything below this line.
