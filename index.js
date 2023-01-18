@@ -7,14 +7,14 @@
 function calculator() {
     const operation = process.argv.splice(0,3)[2];
     const numbers = process.argv.sort((a, b) => {b - a;});
-    
+    console.log("numbers is: " + numbers);
+
     function loopAccumulator(op, []) {
         const num = Array.from(numbers);
-        let accumulator = num[0];
+        let accumulator = Number(num[0]);
      
         for (let i = 1; i < numbers.length; i++) {
-            (op === "+") ? accumulator += num[i] : accumulator -= num[i];
-            console.log("operation is: " + i + accumulator);
+            (op === "+") ? (accumulator += Number(num[i])) : accumulator -= Number(num[i]);
         };
 
         return accumulator;
