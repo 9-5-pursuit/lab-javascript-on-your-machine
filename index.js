@@ -7,10 +7,10 @@
 function calculator() {
     let result;
     let firstNum = Number(process.argv[3]);
-    if (process.argv.length <= 2) {
+    if (process.argv.length < 3) {
         result = 'No operation provided...';
     }
-    if (process.argv.length <= 3) {
+    if (process.argv.length === 3) {
         result = 'No numbers provided...';
     }
     if (process.argv[2] !== 'plus' && process.argv[2] !== 'minus' && process.argv[2] !== undefined) {
