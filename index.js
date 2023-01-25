@@ -4,7 +4,26 @@
  * Depending on the operation, either add up all of the numbers or subtract all of the numbers, from left to right.
  * @returns {number} The result of either adding all numbers or subtracting all numbers, depending on the arguments added to the command line.
  */
-function calculator() {}
+
+function calculator(number) {
+    if (number === undefined) {
+        return 0;
+    }
+    if (typeof number === 'string') {
+        return number;
+    }
+    if (typeof number === 'number') {
+        return number * 2;
+    }
+    if (typeof number === 'object') {
+        return number.length;
+    }
+}
+
+console.log(calculator());
+console.log(calculator('hello'));
+console.log(calculator(2));
+console.log(calculator([1, 2, 3]));
 
 // Don't change anything below this line.
 module.exports = calculator;
