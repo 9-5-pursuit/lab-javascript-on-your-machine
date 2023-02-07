@@ -14,6 +14,9 @@ function calculator() {
     if (process.argv.length < 3){
         return "no arguments providedd";
     }
+    if (process.argv.lengyh === 3) {
+        return "no number provided"
+    }
      let sum = process.argv[2];
     
      for (let i = 2; i < process.argv.length; i++ ){
